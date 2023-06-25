@@ -7,13 +7,7 @@ function BlanksPage() {
   return (
     <section>
       <div className="wrapper__links-block">
-        <div>
-          <h3 className="title">Александрович</h3>
-          <p className="description">Краткое описание</p>
-          <Link to={"../blanks/Шаблон.docx.pdf"} target="_blank" download>
-            <img src={imgDownload} />
-          </Link>
-        </div>
+        <h3>В разработке</h3>
       </div>
     </section>
   );
