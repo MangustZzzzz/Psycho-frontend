@@ -33,7 +33,7 @@ function Header() {
             </li>
             <li>
               <Link className="header--link" to="/blanks">
-                Бланки для тестирования
+                Бланки тестирования
               </Link>
             </li>
           </ul>
