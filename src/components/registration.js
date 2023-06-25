@@ -11,7 +11,7 @@ import { setUserData, fetchUserData } from "../redux/slices/user-slice.js";
 
 import imgPassword from "../assets/img/lock.png";
 import imgEmail from "../assets/img/mail.png";
-import imgUser from "../assets/img/profile-picture.png";
+import imgUser from "../assets/img/profile.png";
 import imgAgreement from "../assets/img/agreement.png";
 import imgMailingList from "../assets/img/social.png";
 import imgLogo from "../assets/icon/logo.png";
