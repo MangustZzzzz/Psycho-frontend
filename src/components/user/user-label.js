@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { delUserData } from "../../redux/slices/user-slice";
 
-import avatar from "../../assets/img/profile-picture.png";
+import avatar from "../../assets/img/profile.png";
 import logout from "../../assets/img/logout.png";
 
 import "../../scss/components/user/header-user-block.scss";
