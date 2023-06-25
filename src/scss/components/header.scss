@@ -31,6 +31,14 @@ header {
       color: $color-orange;
       cursor: pointer;
     }
+    .login {
+      color: $color-orange;
+      border: solid #00000000 2px;
+    }
+    .login:hover {
+      color: $color-purple;
+      border-bottom: solid $color-purple 2px;
+    }
   }
   @import "./little/submit-btn";
 }
