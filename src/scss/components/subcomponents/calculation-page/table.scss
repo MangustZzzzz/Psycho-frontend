@@ -1,0 +1,58 @@
+@import "../../../colors.scss";
+.calc-table-section {
+  grid-area: table;
+  background-color: $color-block_bg;
+  margin: 5px;
+  padding: 15px;
+  min-width: 350px;
+  h4 {
+    text-align: left;
+    color: $color-gray;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .calc-table {
+    overflow-x: auto;
+    padding-bottom: 15px;
+    table {
+      border-collapse: collapse;
+      td,
+      th {
+        padding: 5px; /* Поля вокруг содержимого таблицы */
+        border: solid $color-bg 3px; /* Параметры рамки */
+        font-size: 18px;
+      }
+    }
+    input {
+      font-size: 16px;
+      width: 35px;
+      padding: 2px 5px;
+      border-bottom: solid $color-bg 3px;
+      color: $color-orange;
+      text-align: center;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      /* display: none; <- Crashes Chrome on hover */
+      -webkit-appearance: none;
+      margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    }
+  }
+  .input--submit {
+    margin-top: 20px;
+  }
+  .calc-table::-webkit-scrollbar {
+    height: 10px;
+    background: linear-gradient(100deg, #c423ff 0%, #2668ff 100%);
+  }
+  .calc-table::-webkit-scrollbar-track {
+    background: linear-gradient(0deg, $color-block_bg 0%, $color-block_bg 35%, #00000000 35%, #00000000 65%, $color-block_bg 65%, $color-block_bg 100%);
+  }
+  .calc-table::-webkit-scrollbar-button {
+    display: none;
+  }
+  .calc-table::-webkit-scrollbar-thumb {
+    background-color: $color-bg;
+    border-radius: 8px;
+  }
+}

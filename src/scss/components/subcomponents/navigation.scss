@@ -1,0 +1,42 @@
+@import "../../colors.scss";
+
+.navigation__block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 200px;
+  height: calc(100vh - 100px);
+  background-color: $color-block_bg;
+  padding: 20px 10px;
+  padding-top: 30px;
+
+  nav {
+    li {
+      margin-bottom: 20px;
+      a,
+      p {
+        font-size: 18px;
+        color: $color-light-gray;
+      }
+      a:hover {
+        color: $color-orange;
+      }
+      p {
+        text-decoration: line-through;
+        color: $color-gray;
+      }
+    }
+  }
+  div {
+    li {
+      margin-bottom: 20px;
+      img {
+        width: 65px;
+      }
+      h6 {
+        color: $color-purple;
+        font-size: 14px;
+      }
+    }
+  }
+}

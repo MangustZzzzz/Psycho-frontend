@@ -1,0 +1,26 @@
+@import "../colors.scss";
+
+.section--promo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  div {
+    width: 50%;
+    div {
+      width: 100%;
+    }
+    .text--wrapper {
+      margin-bottom: 30px;
+      p {
+        font-size: 24px;
+      }
+    }
+    .buttons {
+      a {
+        font-size: 20px;
+        margin-right: 20px;
+      }
+    }
+  }
+}

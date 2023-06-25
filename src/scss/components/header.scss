@@ -1,0 +1,36 @@
+@import "../colors.scss";
+
+header {
+  background-color: $color-block_bg;
+  padding: 10px 20px;
+  height: 100px;
+  .header--categories {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .header--categories__item:first-child {
+      .img__logo {
+        margin-left: 42px;
+        height: 80px;
+      }
+    }
+    .header--links {
+      display: flex;
+      color: $color-light-gray;
+      min-width: 300px;
+      width: 40vw;
+      max-width: 700px;
+      justify-content: space-between;
+      .header--link {
+        padding: 5px 10px;
+        color: $color-light-gray;
+        font-size: 18px;
+      }
+    }
+    .header--link:hover {
+      color: $color-orange;
+      cursor: pointer;
+    }
+  }
+  @import "./little/submit-btn";
+}

@@ -1,0 +1,44 @@
+@import "./colors.scss";
+
+*::-webkit-scrollbar {
+  width: 10px;
+  background: linear-gradient(190deg, #c423ff 0%, #2668ff 100%);
+}
+*::-webkit-scrollbar-track {
+  background: linear-gradient(90deg, $color-block_bg 0%, $color-block_bg 35%, #00000000 35%, #00000000 65%, $color-block_bg 65%, $color-block_bg 100%);
+}
+*::-webkit-scrollbar-button {
+  display: none;
+}
+*::-webkit-scrollbar {
+  background-color: $color-bg;
+  border-radius: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $color-bg;
+  border-radius: 8px;
+}
+
+*::-webkit-scrollbar:horizontal {
+  height: 10px;
+  background: linear-gradient(100deg, #c423ff 0%, #2668ff 100%);
+}
+*::-webkit-scrollbar-track:horizontal {
+  background: linear-gradient(0deg, $color-block_bg 0%, $color-block_bg 35%, #00000000 35%, #00000000 65%, $color-block_bg 65%, $color-block_bg 100%);
+}
+body {
+  background-color: $color-bg;
+  color: $color-light_gray;
+  main {
+    display: flex;
+    flex-wrap: nowrap;
+    height: calc(100vh - 100px);
+
+    @import "./components/little/submit-btn.scss";
+    @import "./components/little/orange-link.scss";
+  }
+}
+
+@media (max-width: 950px) {
+}

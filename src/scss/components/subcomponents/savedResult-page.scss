@@ -1,0 +1,32 @@
+@import "../../colors.scss";
+
+.saved__result--page {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100vw - 200px);
+  padding: 5px;
+  .saved--show__block,
+  .saved--list__block {
+    padding: 10px;
+    margin: 5px;
+    min-width: 300px;
+    width: calc(50% - 10px);
+    max-width: 1000px;
+    height: calc(100% - 10px);
+    background: $color-block-bg;
+    h3 {
+      color: $color-gray;
+      text-align: left;
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+    h5 {
+      text-align: left;
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+  }
+  .saved--list__block {
+    padding-right: 5px;
+  }
+}

@@ -1,0 +1,26 @@
+@import "../../colors.scss";
+
+.calculation--page {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "input table output";
+  justify-items: stretch;
+  align-items: stretch;
+  overflow: auto;
+  width: calc(100vw - 200px);
+  padding: 5px;
+}
+
+@media (max-width: 1290px) {
+  .calculation--page {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "input table " "output output";
+  }
+}
+
+@media (max-width: 950px) {
+  .calculation--page {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: "input" "table " "output";
+  }
+}

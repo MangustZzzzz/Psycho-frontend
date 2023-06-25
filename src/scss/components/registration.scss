@@ -1,0 +1,76 @@
+@import "../colors.scss";
+
+.section--registration {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.registration--block {
+  position: relative;
+  border-radius: 15px;
+  width: 600px;
+  background-color: $color-block_bg;
+  padding: 20px;
+  padding-top: 60px;
+  .registration--logo__wrapper {
+    padding: 20px;
+    background: $color-bg;
+    border: solid $color-block_bg 3px;
+    border-radius: 50%;
+    position: absolute;
+    top: -55px;
+    left: 243px;
+  }
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .registration--form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .input--block {
+      margin-bottom: 15px;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      label {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+      }
+      p {
+        text-align: left;
+      }
+      img {
+        width: 35px;
+        margin-right: 10px;
+      }
+    }
+
+    .input__wrapper {
+      margin-left: 10px;
+      padding: 2px;
+      background: $color-gradient;
+      border-radius: 5px;
+
+      input {
+        padding: 2px 5px;
+        width: 400px;
+        font-size: 22px;
+        background: $color-block_bg;
+        border-radius: 4px;
+      }
+      .checkbox--btn {
+        width: auto;
+      }
+    }
+    .input__wrapper--checkbox {
+      background: none;
+    }
+  }
+}

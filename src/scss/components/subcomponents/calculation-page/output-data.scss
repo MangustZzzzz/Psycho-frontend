@@ -1,0 +1,36 @@
+@import "../../../colors.scss";
+
+.output-data__block {
+  grid-area: output;
+  background-color: $color-block_bg;
+  margin: 5px;
+  padding: 15px;
+  min-width: 350px;
+
+  ul {
+    max-height: calc(100vh - 240px);
+    overflow-y: auto;
+  }
+  h4 {
+    text-align: left;
+    color: $color-gray;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 18px;
+    margin: 20px;
+    span {
+      margin-left: 15px;
+      padding: 0 10px;
+      border-bottom: solid $color-bg 3px;
+      color: $color-orange;
+    }
+  }
+  .btn--wrapper {
+    margin-top: 20px;
+  }
+  .clear--btn {
+    margin-left: 50px;
+  }
+}
