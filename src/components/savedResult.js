@@ -15,7 +15,6 @@ function SavedResultPage() {
   const dispatch = useDispatch();
   const savedTests = useSelector((store) => store.savedTests);
   const user = useSelector((store) => store.user);
-  console.log(savedTests);
   const [showShowingTest, setShowingTest] = useState({});
 
   React.useEffect(() => {
@@ -32,7 +31,6 @@ function SavedResultPage() {
       </>
     );
   } else if (savedTests.status === "loaded") {
-    console.log(savedTests.tests[0]);
     return (
       <>
         <Navigation />
