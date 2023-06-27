@@ -17,7 +17,6 @@ function CalculationPage() {
   const service = useSelector((state) => state.service);
 
   React.useEffect(() => {
-    console.log("qwe");
     dispatch(fetchServiceData());
   }, []);
   if (service.status === "loaded") {
