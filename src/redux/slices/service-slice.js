@@ -5,6 +5,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 export const fetchServiceData = createAsyncThunk("service/data", async () => {
   try {
     const { data } = await axios.post("/started-data");
+    console.log(data);
     return data;
   } catch (error) {
     console.log(error);
