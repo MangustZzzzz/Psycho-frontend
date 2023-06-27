@@ -31,7 +31,7 @@ export const serviceSlice = createSlice({
     [fetchServiceData.fulfilled]: (state, action) => {
       state.methodologies = action.payload.result;
       state.status = "loaded";
-      console.log("loaded");
+      console.log(action);
     },
     [fetchServiceData.rejected]: (state, action) => {
       state.status = "error";
