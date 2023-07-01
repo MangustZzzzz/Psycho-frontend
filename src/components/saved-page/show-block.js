@@ -6,6 +6,7 @@ import "../../scss/components/subcomponents/savedResult-page/show-block.scss";
 
 function ShowListItem({ showShowingTest }) {
   const blockWrapperRef = useRef(null);
+  const blockWrapperRef2 = useRef(null);
 
   if (Object.keys(showShowingTest).length !== 0) {
     const testData = JSON.parse(showShowingTest.data);
@@ -33,7 +34,7 @@ function ShowListItem({ showShowingTest }) {
           <div className="responses--table--wrapper">
             <table className="responses--table">
               <tbody>
-                {tableCreator(Math.floor((blockWrapperRef.current.getBoundingClientRect().height - 300) / 45) || 10, testData.personResponses.length).map((arrStr, index) => {
+                {tableCreator(10, testData.personResponses.length).map((arrStr, index) => {
                   return (
                     <tr key={`tr${index}`} className="tr">
                       {arrStr.map((cell) => {

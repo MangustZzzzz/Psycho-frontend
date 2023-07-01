@@ -25,7 +25,7 @@ span {
   }
 }
 .calculation--result {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 
   ul {
     display: flex;
@@ -46,6 +46,33 @@ span {
           padding: 0 5px;
           color: $color-orange;
         }
+      }
+    }
+  }
+}
+
+@media (max-height: 770px) {
+  .calculation--result {
+    ul {
+      li {
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .responses--table {
+    margin-bottom: 16px;
+    border-collapse: collapse;
+    td,
+    th {
+      padding: 3px; /* Поля вокруг содержимого таблицы */
+      border: solid $color-bg 2px; /* Параметры рамки */
+      font-size: 16px;
+      span {
+        border-bottom: solid $color-bg 2px;
+        color: $color-orange;
+        padding: 0 3px;
       }
     }
   }
