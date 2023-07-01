@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Routes, Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -27,6 +27,7 @@ function App() {
       dispatch(fetchUserData());
     }
   }, []);
+
   return (
     <div className="App">
       {popups.bigPopup.state && <BigPopup />}

@@ -15,14 +15,14 @@ import "../scss/components/subcomponents/calculation-page.scss";
 function CalculationPage() {
   const dispatch = useDispatch();
   const service = useSelector((state) => state.service);
-
   React.useEffect(() => {
     dispatch(fetchServiceData());
   }, []);
+
   if (service.status === "loaded") {
     return (
       <>
-        <Navigation />
+        {window.innerWidth > 400 ? <Navigation /> : ""}
 
         <section className="calculation--page">
           <InputData />

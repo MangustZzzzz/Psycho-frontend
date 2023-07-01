@@ -5,13 +5,10 @@ import { tableCreator } from "../../helper-function/forTable";
 import "../../scss/components/subcomponents/savedResult-page/show-block.scss";
 
 function ShowListItem({ showShowingTest }) {
-  const blockWrapperRef = useRef(null);
-  const blockWrapperRef2 = useRef(null);
-
   if (Object.keys(showShowingTest).length !== 0) {
     const testData = JSON.parse(showShowingTest.data);
     return (
-      <div ref={blockWrapperRef} className="saved--show__block">
+      <div className="saved--show__block">
         <h3>
           Результаты тестирования <span>{showShowingTest.nickname} :</span>
         </h3>
@@ -60,7 +57,7 @@ function ShowListItem({ showShowingTest }) {
     );
   } else {
     return (
-      <div ref={blockWrapperRef} className="saved--show__block">
+      <div className="saved--show__block">
         <h3>Результаты тестирования :</h3>
         <p>Для отображения данных, выберите сохраненный тест {" : )"}</p>
       </div>

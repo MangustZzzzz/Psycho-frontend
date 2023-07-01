@@ -41,10 +41,11 @@ function Table() {
     if (wrapperRef.current !== null) {
       const height = wrapperRef.current.getBoundingClientRect().height;
       let count = 15;
-      if (height < 600) {
+      if (height < 750) {
         count = 10;
       }
       setNumOfLines(count);
+      console.log(wrapperRef.current.getBoundingClientRect().height);
     }
   }, [wrapperRef.current]);
   React.useEffect(() => {
