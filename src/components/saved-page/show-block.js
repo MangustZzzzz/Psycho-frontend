@@ -1,24 +1,25 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import { tableCreator } from "../../helper-function/forTable";
 
 import "../../scss/components/subcomponents/savedResult-page/show-block.scss";
 
 function ShowListItem({ showShowingTest }) {
+  const blockWrapperRef = useRef(null);
+
   if (Object.keys(showShowingTest).length !== 0) {
     const testData = JSON.parse(showShowingTest.data);
-    console.log(testData);
     return (
-      <div className="saved--show__block">
+      <div ref={blockWrapperRef} className="saved--show__block">
         <h3>
           Результаты тестирования <span>{showShowingTest.nickname} :</span>
         </h3>
         <div className="calculation--result">
           <h5>Результаты обработки :</h5>
           <ul>
-            {testData.analysisResult.map((elem) => {
+            {testData.analysisResult.map((elem, index) => {
               return (
-                <li>
+                <li key={index}>
                   <p>
                     {elem.name} : <span>{elem.value}</span>
                   </p>
@@ -32,7 +33,7 @@ function ShowListItem({ showShowingTest }) {
           <div className="responses--table--wrapper">
             <table className="responses--table">
               <tbody>
-                {tableCreator(10, testData.personResponses.length).map((arrStr, index) => {
+                {tableCreator(Math.floor((blockWrapperRef.current.getBoundingClientRect().height - 300) / 45) || 10, testData.personResponses.length).map((arrStr, index) => {
                   return (
                     <tr key={`tr${index}`} className="tr">
                       {arrStr.map((cell) => {
@@ -58,7 +59,7 @@ function ShowListItem({ showShowingTest }) {
     );
   } else {
     return (
-      <div className="saved--show__block">
+      <div ref={blockWrapperRef} className="saved--show__block">
         <h3>Результаты тестирования :</h3>
         <p>Для отображения данных, выберите сохраненный тест {" : )"}</p>
       </div>
