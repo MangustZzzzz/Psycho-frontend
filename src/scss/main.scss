@@ -1,5 +1,9 @@
 @import "./colors.scss";
 
+* {
+  z-index: 1;
+}
+
 *::-webkit-scrollbar {
   width: 10px;
   background: linear-gradient(190deg, #c423ff 0%, #2668ff 100%);

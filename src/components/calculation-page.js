@@ -10,6 +10,8 @@ import OutputData from "./subcomponents/calculation-page/output-data";
 import Navigation from "../components/subcomponents/navigation";
 import Loader from "./subcomponents/loader";
 
+import HandlerImage from "./subcomponents/processing-image";
+
 import "../scss/components/subcomponents/calculation-page.scss";
 
 function CalculationPage() {
