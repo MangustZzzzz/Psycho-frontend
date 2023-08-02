@@ -2,6 +2,8 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
 
+import HandlerImage from "../processing-image.js";
+
 import { setMethodology, setTestedPersonData, clearResult } from "../../../redux/slices/session-slice.js";
 
 import "../../../scss/components/subcomponents/calculation-page/input-data.scss";
@@ -31,6 +33,7 @@ function InputData() {
 
   return (
     <div className="input-data__block">
+      <HandlerImage />
       <h4>Параметры :</h4>
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -74,9 +77,7 @@ function InputData() {
           <label>Дата рождения :</label>
           <input type="date" {...register("birthPerson", { required: true })} />
         </div>
-
         {errors.exampleRequired && <span>This field is required</span>}
-
         <input type="submit" className="submit--btn input--submit" />
       </form>
     </div>
