@@ -33,7 +33,7 @@ function InputData() {
 
   return (
     <div className="input-data__block">
-      <HandlerImage />
+      {/*<HandlerImage />*/}
       <h4>Параметры :</h4>
       <form
         onSubmit={handleSubmit(onSubmit)}
