@@ -25,8 +25,21 @@ function Table() {
   const onSubmit = async (dataFromUser) => {
     try {
       const { methodologyId, ...answersObj } = dataFromUser;
-      const answers = Object.values(answersObj);
-      const { data } = await axios.post("/calulation", { answers, methodologyId });
+
+      const answers = Object.entries(answersObj)
+        .map((el) => el)
+        .sort((a, b) => {
+          if (Number(a[0] > b[0])) return 1; // если первое значение больше второго
+          if (Number(a[0] > b[0])) return -1; // если первое значение меньше второго
+        })
+        .map((el) => el[1]);
+      console.log(answersObj);
+      console.log(answers);
+
+      const { gender, birthPerson } = session.testedPersonData;
+      const age = ((new Date().getTime() - new Date(birthPerson)) / (24 * 3600 * 365.25 * 1000)) | 0;
+
+      const { data } = await axios.post("/calulation", { answers, methodologyId, age, gender });
       const result = selectedMethodology.data.params.map((el, index) => {
         return { name: el, value: Object.values(data.result)[index] };
       });
@@ -84,7 +97,7 @@ function Table() {
                               {cell + 1}
                             </th>
                             <td key={`td${cell}`}>
-                              <input key={`input${cell}`} tabIndex={cell + 1} {...register(`val-${cell + 1}`, { required: true, min, max })} type="number" className="input-val" />
+                              <input key={`input${cell}`} tabIndex={cell + 1} {...register(`${cell + 1}`, { required: true, min, max })} type="number" className="input-val" />
                             </td>
                           </React.Fragment>
                         );
