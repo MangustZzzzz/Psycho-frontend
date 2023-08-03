@@ -77,6 +77,13 @@ function InputData() {
           <label>Дата рождения :</label>
           <input type="date" {...register("birthPerson", { required: true })} />
         </div>
+        <div>
+          <label>Пол :</label>
+          <select {...register("gender", { required: true })}>
+            <option value={"female"}>Woman</option>
+            <option value={"male"}>Man</option>
+          </select>
+        </div>
         {errors.exampleRequired && <span>This field is required</span>}
         <input type="submit" className="submit--btn input--submit" />
       </form>
