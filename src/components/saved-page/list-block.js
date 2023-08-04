@@ -9,6 +9,7 @@ import imgTest from "../../assets/icon/p1.png";
 import imgUser from "../../assets/icon/rb2.png";
 import imgBirth from "../../assets/icon/rb3.png";
 import imgClock from "../../assets/icon/b4.png";
+import imgGender from "../../assets/icon/gender.png";
 
 import "../../scss/components/subcomponents/savedResult-page/list-block.scss";
 
@@ -32,6 +33,7 @@ function List({ setShowingTest }) {
       <div className="saved--list__wrapper">
         <ul className="saved--list">
           {savedTests.tests.map((elem, index) => {
+            console.log(elem);
             return (
               <li className={activeIndex === index ? "item--wrapper aktive__item--wrapper" : "item--wrapper"} key={elem.id}>
                 <div
@@ -52,6 +54,10 @@ function List({ setShowingTest }) {
                   <div>
                     <img src={imgBirth} />
                     <p>: {elem.age ? elem.age.split("T")[0] : "-"}</p>
+                  </div>
+                  <div>
+                    <img src={imgGender} />
+                    <p>: {elem.gender ? elem.gender : "-"}</p>
                   </div>
                   <div>
                     <img src={imgClock} />

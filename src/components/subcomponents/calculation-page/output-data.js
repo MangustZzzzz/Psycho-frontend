@@ -16,6 +16,7 @@ function OutputData() {
   const dispatch = useDispatch();
 
   const saveResalt = async () => {
+    console.log(session);
     const dataForSave = {
       userId: user.id,
       methodologyId: session.selectedMethodology.id,
