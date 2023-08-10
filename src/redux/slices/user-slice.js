@@ -15,6 +15,7 @@ export const fetchUserData = createAsyncThunk("user/data", async () => {
 
 const initialState = {
   userData: {},
+  theme: "dark",
   status: "default",
 };
 
@@ -22,6 +23,9 @@ export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
+    setTheme: (state, action) => {
+      state.theme = action.payload;
+    },
     setUserData: (state, userData) => {
       state.userData = userData;
       state.status = "auth";
@@ -48,6 +52,6 @@ export const userSlice = createSlice({
   },
 });
 
-export const { setUserData, delUserData } = userSlice.actions;
+export const { setUserData, delUserData, setTheme } = userSlice.actions;
 
 export default userSlice.reducer;

@@ -2,8 +2,10 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 import axios from "../handlers/axios.js";
+import { regValid } from "../validation/registration.js";
 
 import { Navigate } from "react-router-dom";
 
@@ -27,13 +29,14 @@ function Registration(params) {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm();
+  } = useForm({ resolver: yupResolver(regValid) });
 
   const onSubmit = async (event) => {
     if (!(event.password === event.passwordRepeat)) {
       console.log("Пароли не совпадают");
       return;
     }
+    console.log(event);
     const dataForRegistration = {
       email: event.email,
       password: event.password,
@@ -52,7 +55,7 @@ function Registration(params) {
   if (user.status === "auth") {
     return <Navigate to="/calculator" />;
   }
-
+  console.log(errors);
   return (
     <section className="section--registration">
       <div className="registration--block">
@@ -60,6 +63,7 @@ function Registration(params) {
           <img className="registration--logo" src={imgLogo} />
         </div>
         <h2>Регистрация</h2>
+
         <form className="registration--form" onSubmit={handleSubmit(onSubmit)}>
           <div className="input--block">
             <label>

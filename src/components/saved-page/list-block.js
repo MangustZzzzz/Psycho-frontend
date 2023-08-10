@@ -45,23 +45,42 @@ function List({ setShowingTest }) {
                 >
                   <div>
                     <img src={imgTest} />
-                    <h6>: {elem.method || "-"}</h6>
+                    <p>
+                      <pre>: </pre>
+                    </p>
+                    <h6> {elem.method || "-"}</h6>
                   </div>
                   <div>
                     <img src={imgUser} />
-                    <p>: {elem.nickname || "-"}</p>
+                    <p>
+                      <pre>: </pre>
+                    </p>
+
+                    <p> {elem.nickname || "-"}</p>
                   </div>
                   <div>
                     <img src={imgBirth} />
-                    <p>: {elem.age ? elem.age.split("T")[0] : "-"}</p>
+                    <p>
+                      <pre>: </pre>
+                    </p>
+
+                    <p> {elem.age ? elem.age.split("T")[0] : "-"}</p>
                   </div>
                   <div>
                     <img src={imgGender} />
-                    <p>: {elem.gender ? elem.gender : "-"}</p>
+                    <p>
+                      <pre>: </pre>
+                    </p>
+
+                    <p> {elem.gender ? (elem.gender === "female" ? "Жен." : "Муж.") : "-"}</p>
                   </div>
                   <div>
                     <img src={imgClock} />
-                    <p>: {elem.date ? elem.date.split("T")[0] : "-"}</p>
+                    <p>
+                      <pre>: </pre>
+                    </p>
+
+                    <p> {elem.date ? elem.date.split("T")[0] : "-"}</p>
                   </div>
                 </div>
                 <div className="del--btn--wrapper">

@@ -8,39 +8,47 @@
 }
 .item--wrapper {
   padding: 2px;
-  background: $color-bg;
+  background: var(--color-bg);
   border-radius: 5px;
   margin-bottom: 5px;
   display: flex;
   .item {
-    width: calc(100% - 33px);
+    width: calc(100% - 31px);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    border-radius: 4px;
-    background: $color-block-bg;
+    border-radius: 4px 0 0 4px;
+    background: var(--color-block_bg);
     padding: 5px 15px;
     cursor: pointer;
     div {
       min-width: 120px;
-      width: 19%;
+      width: 16%;
       display: flex;
       flex-wrap: nowrap;
       margin: 5px 0;
       margin-right: 10px;
+      align-items: center;
       h6 {
         text-align: left;
         max-width: 200px;
-        color: $color-orange;
+        color: var(--color-orange);
         margin-right: 10px;
       }
+
       p {
         white-space: nowrap;
       }
       img {
         height: 25px;
         margin-right: 5px;
+      }
+    }
+    div:first-child {
+      width: 28%;
+      pre {
+        color: var(--color-orange);
       }
     }
     div:last-child {
@@ -52,14 +60,14 @@
 .del--btn--wrapper {
   position: relative;
   padding: 2px;
-  background: url("../../../../assets/icon/trash.png"), $color-bg;
+  background: url("../../../../assets/icon/trash.png"), var(--color-bg);
   background-size: 25px;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 5px;
+  border-radius: 0 4px 4px 0;
   display: flex;
   align-items: center;
-  margin-left: 3px;
+  margin-left: 2px;
   width: 29px;
   button {
     width: 100%;
@@ -67,15 +75,15 @@
   }
 }
 .del--btn--wrapper:hover {
-  background: url("../../../../assets/icon/trashRed.png"), $color-bg;
+  background: url("../../../../assets/icon/trashRed.png"), var(--color-bg);
   background-size: 25px;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .item--wrapper:hover {
-  background: $color-light-gray;
+  background: var(--color-light_gray);
 }
 .aktive__item--wrapper {
-  background: $color-gradient;
+  background: var(--color-gradient);
 }

@@ -1,7 +1,7 @@
 @import "../colors.scss";
 
 header {
-  background-color: $color-block_bg;
+  background-color: var(--color-block_bg);
   padding: 10px 20px;
   height: 100px;
   .header--categories {
@@ -16,28 +16,28 @@ header {
     }
     .header--links {
       display: flex;
-      color: $color-light-gray;
+      color: var(--color-light_gray);
       min-width: 300px;
       width: 40vw;
       max-width: 700px;
       justify-content: space-between;
       .header--link {
         padding: 5px 10px;
-        color: $color-light-gray;
+        color: var(--color-light_gray);
         font-size: 18px;
       }
     }
     .header--link:hover {
-      color: $color-orange;
+      color: var(--color-orange);
       cursor: pointer;
     }
     .login {
-      color: $color-orange;
+      color: var(--color-orange);
       border: solid #00000000 2px;
     }
     .login:hover {
-      color: $color-purple;
-      border-bottom: solid $color-purple 2px;
+      color: var(--color-purple);
+      border-bottom: solid var(--color-purple) 2px;
     }
   }
   @import "./little/submit-btn";

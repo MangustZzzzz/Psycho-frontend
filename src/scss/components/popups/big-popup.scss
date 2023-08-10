@@ -11,13 +11,13 @@
   background: #00000055;
   .popup--border {
     padding: 3px;
-    background: $color-gradient;
+    background: var(--color-gradient);
     border-radius: 10px;
   }
   .popup {
     position: relative;
     border-radius: 9px;
-    background-color: $color-block_bg;
+    background-color: var(--color-block_bg);
     padding: 20px 30px;
     max-width: 500px;
     .close {

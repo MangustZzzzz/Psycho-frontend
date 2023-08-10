@@ -11,13 +11,13 @@
   position: relative;
   border-radius: 15px;
   width: 600px;
-  background-color: $color-block_bg;
+  background-color: var(--color-block_bg);
   padding: 20px;
   padding-top: 60px;
   .registration--logo__wrapper {
     padding: 20px;
-    background: $color-bg;
-    border: solid $color-block_bg 3px;
+    background: var(--color-bg);
+    border: solid var(--color-block_bg) 3px;
     border-radius: 50%;
     position: absolute;
     top: -55px;
@@ -25,7 +25,11 @@
   }
   h2 {
     font-size: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+  }
+  .auth-err-mess {
+    color: var(--color-worning);
+    margin-bottom: 10px;
   }
   .registration--form {
     display: flex;
@@ -55,14 +59,14 @@
     .input__wrapper {
       margin-left: 10px;
       padding: 2px;
-      background: $color-gradient;
+      background: var(--color-gradient);
       border-radius: 5px;
 
       input {
         padding: 2px 5px;
         width: 400px;
         font-size: 22px;
-        background: $color-block_bg;
+        background: var(--color-block_bg);
         border-radius: 4px;
       }
       .checkbox--btn {

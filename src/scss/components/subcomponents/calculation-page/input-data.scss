@@ -1,13 +1,11 @@
-@import "../../../colors.scss";
-
 .input-data__block {
-  background-color: $color-block_bg;
+  background-color: var(--color-block_bg);
   margin: 5px;
   padding: 15px;
   min-width: 350px;
   h4 {
     text-align: left;
-    color: $color-gray;
+    color: var(--color-gray);
     font-size: 18px;
     margin-bottom: 10px;
   }
@@ -15,16 +13,18 @@
     margin-right: 10px;
   }
   .input--submit {
-    margin-top: 20px;
+    margin-top: 10px;
   }
   input,
   select {
-    background-color: $color-block_bg;
-    color: $color-orange;
+    background-color: var(--color-block_bg);
+    color: var(--color-orange);
     padding: 0 10px;
-    border-bottom: solid $color-bg 3px;
+    border-bottom: solid var(--color-bg) 3px;
     max-width: 300px;
     text-align: center;
     margin-bottom: 10px;
+    font-weight: 600;
+    letter-spacing: 0.025em;
   }
 }

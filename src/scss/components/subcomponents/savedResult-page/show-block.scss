@@ -1,7 +1,7 @@
 @import "../.././../colors.scss";
 
 span {
-  color: $color-orange;
+  color: var(--color-orange);
 }
 .responses--person {
   padding: 5px 10px;
@@ -15,11 +15,11 @@ span {
   td,
   th {
     padding: 5px; /* Поля вокруг содержимого таблицы */
-    border: solid $color-bg 3px; /* Параметры рамки */
+    border: solid var(--color-bg) 3px; /* Параметры рамки */
     font-size: 18px;
     span {
-      border-bottom: solid $color-bg 3px;
-      color: $color-orange;
+      border-bottom: solid var(--color-bg) 3px;
+      color: var(--color-orange);
       padding: 0 5px;
     }
   }
@@ -42,9 +42,9 @@ span {
         white-space: nowrap;
         font-size: 18px;
         span {
-          border-bottom: solid $color-bg 3px;
+          border-bottom: solid var(--color-bg) 3px;
           padding: 0 5px;
-          color: $color-orange;
+          color: var(--color-orange);
         }
       }
     }
@@ -67,11 +67,11 @@ span {
     td,
     th {
       padding: 3px; /* Поля вокруг содержимого таблицы */
-      border: solid $color-bg 2px; /* Параметры рамки */
+      border: solid var(--color-bg) 2px; /* Параметры рамки */
       font-size: 16px;
       span {
-        border-bottom: solid $color-bg 2px;
-        color: $color-orange;
+        border-bottom: solid var(--color-bg) 2px;
+        color: var(--color-orange);
         padding: 0 3px;
       }
     }

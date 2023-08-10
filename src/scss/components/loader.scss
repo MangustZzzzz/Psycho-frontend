@@ -6,7 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $color-bg;
+  background-color: var(--color-bg);
 }
 .container {
   width: 100%;
@@ -32,11 +32,11 @@
     border-radius: 50%;
   }
   .ring:nth-child(1) {
-    border-left: solid $color-blue 4px;
+    border-left: solid var(--color-blue) 4px;
     animation: rotate1 2.5s linear infinite;
   }
   .ring:nth-child(2) {
-    border-right: solid $color-purple 4px;
+    border-right: solid var(--color-purple) 4px;
 
     animation: rotate4 2.5s linear infinite;
   }

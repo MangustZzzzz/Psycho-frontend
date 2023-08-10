@@ -11,6 +11,9 @@ const initialState = {
     title: "Title",
     content: "Content",
   },
+  sendMessage: {
+    state: false,
+  },
 };
 
 export const popupsSlice = createSlice({
@@ -28,12 +31,20 @@ export const popupsSlice = createSlice({
       state.bigPopup.title = "";
       state.bigPopup.content = "";
     },
+
     rightAnglePopup: (state) => {
       state.rightAnglePopup = !state.rightAnglePopup;
+    },
+    onSendMessage: (state, action) => {
+      console.log(action.payload);
+      state.sendMessage.state = true;
+    },
+    offSendMessage: (state) => {
+      state.sendMessage.state = false;
     },
   },
 });
 
-export const { onBigPopup, offBigPopup, rightAnglePopup } = popupsSlice.actions;
+export const { onBigPopup, offBigPopup, rightAnglePopup, onSendMessage, offSendMessage } = popupsSlice.actions;
 
 export default popupsSlice.reducer;

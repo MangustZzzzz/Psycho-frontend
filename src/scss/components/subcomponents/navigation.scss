@@ -6,7 +6,7 @@
   justify-content: space-between;
   min-width: 200px;
   height: calc(100vh - 100px);
-  background-color: $color-block_bg;
+  background-color: var(--color-block_bg);
   padding: 20px 10px;
   padding-top: 30px;
 
@@ -16,14 +16,14 @@
       a,
       p {
         font-size: 18px;
-        color: $color-light-gray;
+        color: var(--color-light_gray);
       }
       a:hover {
-        color: $color-orange;
+        color: var(--color-orange);
       }
       p {
         text-decoration: line-through;
-        color: $color-gray;
+        color: var(--color-gray);
       }
     }
   }
@@ -34,9 +34,35 @@
         width: 65px;
       }
       h6 {
-        color: $color-purple;
+        color: var(--color-purple);
         font-size: 14px;
       }
     }
+    .library {
+      cursor: not-allowed;
+      a {
+        cursor: inherit;
+      }
+    }
+    .information {
+      cursor: not-allowed;
+      a {
+        cursor: inherit;
+      }
+    }
+    .settings:hover {
+      img {
+        animation: 10s linear rotation infinite;
+      }
+    }
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

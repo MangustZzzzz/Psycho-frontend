@@ -13,9 +13,9 @@
     width: calc(50% - 10px);
     max-width: 1000px;
     height: calc(100% - 10px);
-    background: $color-block-bg;
+    background: var(--color-block_bg);
     h3 {
-      color: $color-gray;
+      color: var(--color-gray);
       text-align: left;
       margin-bottom: 15px;
       font-size: 18px;

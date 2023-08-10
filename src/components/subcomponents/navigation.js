@@ -34,20 +34,20 @@ function Navigation() {
       </nav>
       <div>
         <ul>
-          <li>
+          <li className="library">
             <Link to="/">
               <img src={imgBook} />
               <h6>Инструкция</h6>
             </Link>
           </li>
-          <li>
+          <li className="information">
             <Link to="/">
               <img src={imgInfo} />
               <h6>Информация</h6>
             </Link>
           </li>
-          <li>
-            <Link to="/">
+          <li className="settings">
+            <Link to="/settings">
               <img src={imgSettings} />
               <h6>Настройки</h6>
             </Link>

@@ -22,6 +22,7 @@ function Table() {
     reset,
     formState: { errors },
   } = useForm();
+
   const onSubmit = async (dataFromUser) => {
     try {
       const { methodologyId, ...answersObj } = dataFromUser;
@@ -63,6 +64,7 @@ function Table() {
   }, [wrapperRef.current]);
   React.useEffect(() => {
     reset();
+    console.log(errors);
   }, [selectedMethodology]);
 
   //////
@@ -71,9 +73,13 @@ function Table() {
     const methodologyData = selectedMethodology.data;
     const numOfQuestions = methodologyData.numOfQuestions;
     const responseRange = methodologyData.responseRange;
+    console.log(responseRange);
     return (
       <div ref={wrapperRef} className="calc-table-section">
         <h4>Ответы испытуемого :</h4>
+        <p className="note">
+          <span>Обратите внимание!</span> Все поля должны быть заполнены, допустимые значения от <span>{responseRange[0].min}</span> до <span>{responseRange[0].max}</span> включительно
+        </p>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="calc-table">
             <table className="table">
@@ -109,6 +115,13 @@ function Table() {
             </table>
             <input type="hidden" readOnly {...register("methodologyId", { required: true, value: `${selectedMethodology.id}` })} />
           </div>
+          {Object.keys(errors) != 0 && (
+            <p className="table__err-message">
+              Мы обнаружили ошибку заполнения ) ; <br />
+              Пожалуйста, убедитесь что все поля заполнены корректно
+            </p>
+          )}
+
           <input type="submit" className="submit--btn input--submit" />
         </form>
       </div>

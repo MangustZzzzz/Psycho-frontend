@@ -13,7 +13,7 @@
     }
   }
   .content {
-    color: $color-light-gray;
+    color: var(--color-light_gray);
     display: flex;
     align-items: center;
     button {
@@ -26,7 +26,7 @@
       }
     }
     button:hover {
-      color: $color-purple;
+      color: var(--color-purple);
     }
   }
 }

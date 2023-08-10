@@ -9,10 +9,12 @@ import imgLogo from "../assets/icon/logo.png";
 import imgEmail from "../assets/img/mail.png";
 import imgPassword from "../assets/img/lock.png";
 import { Link, Navigate } from "react-router-dom";
+import { useState } from "react";
 
 function Login() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
+  const [isErrAuth, setErrAuth] = useState("");
   const {
     register,
     handleSubmit,
@@ -21,14 +23,22 @@ function Login() {
   } = useForm();
 
   const onSubmit = async (event) => {
-    const dataForLogin = {
-      email: event.email,
-      password: event.password,
-    };
-    const { data } = await axios.post("/auth/login", dataForLogin);
-    if ("token" in data) {
-      window.localStorage.setItem("token", data.token);
-      dispatch(fetchUserData());
+    try {
+      const dataForLogin = {
+        email: event.email,
+        password: event.password,
+      };
+      console.log("start");
+      const { data } = await axios.post("/auth/login", dataForLogin);
+      if ("token" in data) {
+        console.log("true");
+        console.log("data", data);
+
+        window.localStorage.setItem("token", data.token);
+        dispatch(fetchUserData());
+      }
+    } catch (error) {
+      setErrAuth(error.response.data.message);
     }
   };
   if (user.status === "auth") {
@@ -41,6 +51,7 @@ function Login() {
           <img className="registration--logo" src={imgLogo} />
         </div>
         <h2>Авторизация</h2>
+        <p className="auth-err-mess">{isErrAuth ? isErrAuth : <br />}</p>
         <form className="registration--form" onSubmit={handleSubmit(onSubmit)}>
           <div className="input--block">
             <label>
@@ -49,6 +60,7 @@ function Login() {
             <div className="input__wrapper">
               <input className="input" type="string" placeholder="E-mail" {...register("email", { required: true })} />
             </div>
+            {errors.email && <span>This field is required</span>}
           </div>
 
           <div className="input--block">
@@ -58,6 +70,7 @@ function Login() {
             <div className="input__wrapper">
               <input className="input" type="password" placeholder="Password" {...register("password", { required: true })} />
             </div>
+            {errors.email && <span>This field is required</span>}
           </div>
 
           <div className="input--block">

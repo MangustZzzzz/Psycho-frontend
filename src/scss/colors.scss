@@ -1,14 +1,15 @@
-$color-orange: #fd8321;
-$color-purple: #c423ff;
-$color-green: #00d25b;
-$color-red: #df13a2;
-$color-blue: #0466f7;
-$color-worning: #de1b1b;
+:root {
+  --color-orange: #fd8321;
+  --color-purple: #c423ff;
+  --color-green: #00d25b;
+  --color-red: #df13a2;
+  --color-blue: #0466f7;
+  --color-worning: #de1b1b;
+  --color-bg: #22242a;
+  --color-block_bg: #2d3134;
+  --color-gray: #5f5f5f;
+  --color-light_gray: #949aa0;
+  --color-light: #e9e9e9;
 
-$color-bg: #22242a;
-$color-block_bg: #2d3134;
-
-$color-gray: #5f5f5f;
-$color-light_gray: #949aa0;
-
-$color-gradient: linear-gradient(100deg, #c423ff 0%, #2668ff 100%);
+  --color-gradient: linear-gradient(100deg, #c423ff 0%, #2668ff 100%);
+}

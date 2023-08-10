@@ -9,18 +9,18 @@
   background: linear-gradient(190deg, #c423ff 0%, #2668ff 100%);
 }
 *::-webkit-scrollbar-track {
-  background: linear-gradient(90deg, $color-block_bg 0%, $color-block_bg 35%, #00000000 35%, #00000000 65%, $color-block_bg 65%, $color-block_bg 100%);
+  background: linear-gradient(90deg, var(--color-block_bg) 0%, var(--color-block_bg) 35%, #00000000 35%, #00000000 65%, var(--color-block_bg) 65%, var(--color-block_bg) 100%);
 }
 *::-webkit-scrollbar-button {
   display: none;
 }
 *::-webkit-scrollbar {
-  background-color: $color-bg;
+  background-color: var(--color-bg);
   border-radius: 8px;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: $color-bg;
+  background-color: var(--color-bg);
   border-radius: 8px;
 }
 
@@ -29,11 +29,11 @@
   background: linear-gradient(100deg, #c423ff 0%, #2668ff 100%);
 }
 *::-webkit-scrollbar-track:horizontal {
-  background: linear-gradient(0deg, $color-block_bg 0%, $color-block_bg 35%, #00000000 35%, #00000000 65%, $color-block_bg 65%, $color-block_bg 100%);
+  background: linear-gradient(0deg, var(--color-block_bg) 0%, var(--color-block_bg) 35%, #00000000 35%, #00000000 65%, var(--color-block_bg) 65%, var(--color-block_bg) 100%);
 }
 body {
-  background-color: $color-bg;
-  color: $color-light_gray;
+  background-color: var(--color-bg);
+  color: var(--color-light_gray);
   main {
     display: flex;
     flex-wrap: nowrap;

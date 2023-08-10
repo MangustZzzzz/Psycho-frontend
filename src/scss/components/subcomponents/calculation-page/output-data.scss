@@ -2,7 +2,7 @@
 
 .output-data__block {
   grid-area: output;
-  background-color: $color-block_bg;
+  background-color: var(--color-block_bg);
   margin: 5px;
   padding: 15px;
   min-width: 350px;
@@ -13,7 +13,7 @@
   }
   h4 {
     text-align: left;
-    color: $color-gray;
+    color: var(--color-gray);
     font-size: 18px;
     margin-bottom: 10px;
   }
@@ -23,8 +23,8 @@
     span {
       margin-left: 15px;
       padding: 0 10px;
-      border-bottom: solid $color-bg 3px;
-      color: $color-orange;
+      border-bottom: solid var(--color-bg) 3px;
+      color: var(--color-orange);
     }
   }
   .btn--wrapper {

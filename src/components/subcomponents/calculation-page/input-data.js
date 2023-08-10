@@ -80,8 +80,8 @@ function InputData() {
         <div>
           <label>Пол :</label>
           <select {...register("gender", { required: true })}>
-            <option value={"female"}>Woman</option>
-            <option value={"male"}>Man</option>
+            <option value={"female"}>Жен.</option>
+            <option value={"male"}>Муж.</option>
           </select>
         </div>
         {errors.exampleRequired && <span>This field is required</span>}
