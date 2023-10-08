@@ -4,7 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 import axios from "../../../handlers/axios.js";
 
 import { clearResult } from "../../../redux/slices/session-slice";
-import { onBigPopup } from "../../../redux/slices/popups-slice";
+import { onRightAnglePopup, offRightAnglePopup, onBigPopup } from "../../../redux/slices/popups-slice";
+import { addNewPerson } from "../../../redux/slices/user-slice.js";
 
 import "../../../scss/components/subcomponents/calculation-page/output-data.scss";
 
@@ -27,7 +28,12 @@ function OutputData() {
     try {
       const { data } = await axios.post("/user/save", dataForSave);
 
-      dispatch(onBigPopup(data));
+      dispatch(onRightAnglePopup(data));
+      dispatch(addNewPerson(data.newTestedPerson));
+
+      setTimeout(() => {
+        dispatch(offRightAnglePopup());
+      }, 4000);
     } catch (error) {
       const params = {
         title: "Сохранение невозможно",

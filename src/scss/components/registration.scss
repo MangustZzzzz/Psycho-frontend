@@ -54,6 +54,13 @@
         width: 35px;
         margin-right: 10px;
       }
+      .reg__wrap--err--email {
+        position: relative;
+        margin-left: 10px;
+        img {
+          width: 20px;
+        }
+      }
     }
 
     .input__wrapper {

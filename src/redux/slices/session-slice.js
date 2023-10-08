@@ -27,6 +27,7 @@ export const sessionSlice = createSlice({
 
     // --- testedPersonData --- //
     setTestedPersonData: (state, action) => {
+      console.log("setTestedPersonData");
       state.testedPersonData = action.payload;
     },
     /////////////////////////////

@@ -37,10 +37,7 @@ function Table() {
       console.log(answersObj);
       console.log(answers);
 
-      const { gender, birthPerson } = session.testedPersonData;
-      const age = ((new Date().getTime() - new Date(birthPerson)) / (24 * 3600 * 365.25 * 1000)) | 0;
-
-      const { data } = await axios.post("/calulation", { answers, methodologyId, age, gender });
+      const { data } = await axios.post("/calulation", { answers, ...session.testedPersonData });
       const result = selectedMethodology.data.params.map((el, index) => {
         return { name: el, value: Object.values(data.result)[index] };
       });
@@ -64,7 +61,7 @@ function Table() {
   }, [wrapperRef.current]);
   React.useEffect(() => {
     reset();
-    console.log(errors);
+    //console.log(errors);
   }, [selectedMethodology]);
 
   //////
@@ -73,7 +70,7 @@ function Table() {
     const methodologyData = selectedMethodology.data;
     const numOfQuestions = methodologyData.numOfQuestions;
     const responseRange = methodologyData.responseRange;
-    console.log(responseRange);
+    //console.log(responseRange);
     return (
       <div ref={wrapperRef} className="calc-table-section">
         <h4>Ответы испытуемого :</h4>

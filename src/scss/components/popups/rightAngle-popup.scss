@@ -1,0 +1,13 @@
+.rightAngle--popup--border {
+  position: fixed;
+  z-index: 9999;
+  background: var(--color-gradient);
+  padding: 2px;
+  right: 20px;
+  bottom: 50px;
+  .rightAngle--popup {
+    background: var(--color-block_bg);
+    padding: 10px;
+    width: 250px;
+  }
+}

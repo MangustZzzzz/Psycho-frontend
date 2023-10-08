@@ -16,9 +16,8 @@
     .settings--list {
       margin-bottom: 15px;
       .settings--item {
-        input {
-          margin-left: 15px;
-        }
+        display: flex;
+        justify-content: center;
       }
     }
   }

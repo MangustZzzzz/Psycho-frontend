@@ -12,6 +12,8 @@ import Registration from "./components/registration";
 import PromoPage from "./components/promo-page";
 import Login from "./components/login";
 import BigPopup from "./components/big-popup-block";
+import RightAnglePopup from "./components/rightAngle-popup-block";
+
 import SendMessage from "./components/sand-message-to-developers";
 import BlanksPage from "./components/blanks-page";
 import SavedResultPage from "./components/savedResult";
@@ -80,6 +82,7 @@ function App() {
 
       <main>
         {popups.bigPopup.state && <BigPopup />}
+        {popups.rightAnglePopup.state && <RightAnglePopup />}
         {popups.sendMessage.state && <SendMessage />}
         <Routes>
           <Route path="/" element={<PromoPage />} />

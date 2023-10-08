@@ -11,47 +11,48 @@ import "../../../scss/components/subcomponents/calculation-page/input-data.scss"
 function InputData() {
   const dispatch = useDispatch();
   const { methodologies } = useSelector((state) => state.service);
-  const { selectedMethodology } = useSelector((state) => state.session);
+  const user = useSelector((state) => state.user);
 
   const {
     register,
     handleSubmit,
     watch,
+    setValue,
+    getValues,
     formState: { errors },
   } = useForm();
-  const onSubmit = (event) => {
-    //Обработка картинки (Возможно есть смысл даже кеопку убрать)
-    console.log(event);
-  };
-  const onChange = () => {
+
+  const onChange = (event) => {
+    if (event.target.name === "nickname") {
+      setValue("testedPerson", "-1");
+    }
+    if (event.target.name === "testedPerson") {
+      let selectedPerson = user.userData.testedPersons.find((el) => el.id == event.target.value);
+      setValue("nickname", selectedPerson?.nickname || "");
+      setValue("birthPerson", selectedPerson?.age === null ? "" : selectedPerson?.age.replace(/T.*/, "") || "");
+      setValue("gender", selectedPerson?.gender || "female");
+    }
+    if (event.target.name === "metodology") {
+      const methodology = methodologies.find((el) => el.id == event.target.value);
+      dispatch(clearResult());
+      dispatch(setMethodology(methodology));
+    }
     dispatch(setTestedPersonData(watch()));
   };
+
   React.useEffect(() => {
     dispatch(setMethodology(methodologies[0]));
+    dispatch(setTestedPersonData(watch()));
   }, []);
-  //console.log(watch("example")); // watch input value by passing the name of it
 
   return (
     <div className="input-data__block">
       {/*<HandlerImage />*/}
       <h4>Параметры :</h4>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        onChange={() => {
-          onChange();
-        }}
-      >
+      <form onChange={(event) => onChange(event)}>
         <div>
           <label>Методология :</label>
-          <select
-            defaultValue={methodologies[0]}
-            {...register("metodology", { required: true })}
-            onChange={(event) => {
-              const methodology = methodologies.find((el) => el.id == event.target.value);
-              dispatch(setMethodology(methodology));
-              dispatch(clearResult());
-            }}
-          >
+          <select {...register("metodology", { required: true })}>
             {methodologies.map((methodology, index) => {
               return (
                 <option key={methodology.id} value={methodology.id}>
@@ -61,14 +62,24 @@ function InputData() {
             })}
           </select>
         </div>
-        <div>
-          <label>Тестируемый :</label>
-          <select {...register("TestedPerson", { required: true })}>
-            <option>New person</option>
-            <option>Вася</option>
-            <option>Алиса</option>
-          </select>
-        </div>
+        {user.status === "auth" && (
+          <div>
+            <label>Тестируемый :</label>
+            <select {...register("testedPerson", { required: true })}>
+              <option key="-1" value={-1}>
+                New person
+              </option>
+              {user.userData.testedPersons.map((person) => {
+                return (
+                  <option key={person.id} value={person.id}>
+                    {person.nickname}
+                  </option>
+                );
+              })}
+            </select>
+          </div>
+        )}
+
         <div>
           <label>Псевдоним :</label>
           <input type="string" {...register("nickname", { required: true })} />
@@ -85,7 +96,6 @@ function InputData() {
           </select>
         </div>
         {errors.exampleRequired && <span>This field is required</span>}
-        <input type="submit" className="submit--btn input--submit" />
       </form>
     </div>
   );

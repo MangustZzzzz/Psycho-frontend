@@ -33,7 +33,6 @@ function List({ setShowingTest }) {
       <div className="saved--list__wrapper">
         <ul className="saved--list">
           {savedTests.tests.map((elem, index) => {
-            console.log(elem);
             return (
               <li className={activeIndex === index ? "item--wrapper aktive__item--wrapper" : "item--wrapper"} key={elem.id}>
                 <div

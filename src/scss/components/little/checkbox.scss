@@ -1,0 +1,29 @@
+.castomCheckbox {
+  top: 6px;
+  position: relative;
+  margin-left: 15px;
+  padding: 3px;
+  width: 40px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: var(--color-block_bg);
+  display: inline-block;
+  box-shadow: inset 0px 0px 3px #0f0f0f;
+}
+.castomCheckbox::before {
+  content: "";
+  position: absolute;
+  right: 22px;
+  width: 14px;
+  height: 14px;
+  display: block;
+  background-color: var(--color-orange);
+  border-radius: 50%;
+  transition: 1s;
+}
+.inputCheckbox:checked + .castomCheckbox::before {
+  right: 4px;
+}
+.inputCheckbox {
+  display: none;
+}

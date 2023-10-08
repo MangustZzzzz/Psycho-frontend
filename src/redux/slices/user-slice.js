@@ -14,7 +14,9 @@ export const fetchUserData = createAsyncThunk("user/data", async () => {
 });
 
 const initialState = {
-  userData: {},
+  userData: {
+    testedPersons: [],
+  },
   theme: "dark",
   status: "default",
 };
@@ -34,6 +36,11 @@ export const userSlice = createSlice({
       state.userData = {};
       state.status = "default";
     },
+    addNewPerson: (state, action) => {
+      if (Object.keys(action.payload).length) {
+        state.userData.testedPersons.push(action.payload);
+      }
+    },
   },
   extraReducers: {
     [fetchUserData.pending]: (state) => {
@@ -52,6 +59,6 @@ export const userSlice = createSlice({
   },
 });
 
-export const { setUserData, delUserData, setTheme } = userSlice.actions;
+export const { setUserData, delUserData, setTheme, addNewPerson } = userSlice.actions;
 
 export default userSlice.reducer;

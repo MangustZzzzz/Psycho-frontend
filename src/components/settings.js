@@ -1,9 +1,11 @@
-import "../scss/components/settings-page.scss";
 import Navigation from "./subcomponents/navigation";
 import React, { useEffect, useState } from "react";
 import { setTheme } from "../redux/slices/user-slice";
 import { useDispatch, useSelector } from "react-redux";
 import { onSendMessage } from "../redux/slices/popups-slice";
+
+import "../scss/components/settings-page.scss";
+import Checkbox from "./little/checkbox";
 
 function SettingsPage() {
   const theme = useSelector((state) => state.user.theme);
@@ -42,8 +44,7 @@ function SettingsPage() {
         <div className="settings--block">
           <ul className="settings--list">
             <li className="settings--item">
-              <label htmlFor="theme">Светлая тема :</label>
-              <input id="theme" type="checkbox" onChange={handelCheck} checked={theme == "light" ? true : false} />
+              <Checkbox labelContent={"Светлая тема :"} itemName="theme" handleFunc={handelCheck} value={theme == "light" ? true : false} />
             </li>
           </ul>
 
