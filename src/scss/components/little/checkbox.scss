@@ -1,9 +1,20 @@
+.castom-checkbox--label {
+  margin-bottom: 15px;
+}
+
+.checkbox-content__wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  text-align: left;
+}
+
 .castomCheckbox {
   top: 6px;
   position: relative;
   margin-left: 15px;
   padding: 3px;
-  width: 40px;
+  width: 54px;
   height: 20px;
   border-radius: 10px;
   background-color: var(--color-block_bg);
@@ -19,11 +30,16 @@
   display: block;
   background-color: var(--color-orange);
   border-radius: 50%;
-  transition: 1s;
+  transition: 0.3s;
 }
 .inputCheckbox:checked + .castomCheckbox::before {
   right: 4px;
 }
 .inputCheckbox {
   display: none;
+}
+.checkbox-img {
+  margin-right: 10px;
+  width: 35px;
+  height: 35px;
 }

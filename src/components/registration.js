@@ -169,22 +169,23 @@ function Registration(params) {
               <input className="input" type="password" placeholder="Repeat password" {...register("passwordRepeat", { required: true })} />
             </div>
           </div>
-
-          <div className="input--block">
-            <label>
-              <img src={imgAgreement} />
-              <p>
+          <Checkbox
+            labelContentImg={imgAgreement}
+            labelContentText={
+              <>
                 Регистрируясь, я даю свое согласие на обработку моих личных данных и подтвержлаю данное{" "}
                 <span>
                   <Link className="orange--link" to={"/"}>
                     соглашение
                   </Link>
                 </span>
-              </p>
-            </label>
-            <div className="input__wrapper input__wrapper--checkbox">
-              <input type="checkbox" className="checkbox--btn" {...register("agreement", { required: true })} />
-            </div>
+              </>
+            }
+            itemName="agreement"
+            reactForm={register("agreement")}
+          />
+
+          <div className="input--block">
             {errors.agreement && (
               <div
                 className="reg__wrap--err--email"
@@ -201,24 +202,7 @@ function Registration(params) {
             )}
           </div>
 
-          <div className="input--block">
-            <label>
-              <img src={imgMailingList} />
-              <p>Я не против получать информацию об изменениях и различные выгодные предложенеия</p>
-            </label>
-            <div className="input__wrapper  input__wrapper--checkbox">
-              <input type="checkbox" className="checkbox--btn" {...register("mailingList")} />
-            </div>
-          </div>
-          <Checkbox
-            labelContent={
-              <>
-                <img src={imgMailingList} /> <p>Я не против получать информацию об изменениях и различные выгодные предложенеия</p>
-              </>
-            }
-            itemName="theme"
-            reactForm={register("agreement")}
-          />
+          <Checkbox labelContentImg={imgMailingList} labelContentText="Я не против получать информацию об изменениях и различные выгодные предложенеия" itemName="mailingList" reactForm={register("mailingList")} />
 
           <div className="input--block">
             <input type="submit" value={"Зарегистрироваться"} className="submit--btn" {...register("submit")} />
